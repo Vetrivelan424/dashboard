@@ -1,12 +1,10 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React from 'react'
 import profile from '../assets/Images/logos/profile_img.png'
 import profile1 from '../assets/Images/logos/profile_1.jpg'
 import profile2 from '../assets/Images/logos/profile_2.jpg'
-import profile3 from '../assets/Images/logos/profile_3.jpg'
-import profile4 from '../assets/Images/logos/profile_4.jpg'
+
 import Rating from '@mui/material/Rating';
-import { Chart } from 'react-google-charts';
-import Box from '@mui/joy/Box';
+
 import StarIcon from '@mui/icons-material/Star';
 
 import CircularProgress from '@mui/joy/CircularProgress';
@@ -32,7 +30,7 @@ import GpsFixedIcon from '@mui/icons-material/GpsFixed';
 import LunchDiningIcon from '@mui/icons-material/LunchDining';
 import DinnerDiningIcon from '@mui/icons-material/DinnerDining';
 export default function Dashboard() {
-  const [value, setValue] = useState('2');
+  // const [value, setValue] = useState('2');
   const userList = [
     {
       profile_img: profile1,
@@ -119,12 +117,12 @@ export default function Dashboard() {
 
     {
       name: "Status",
-      selector: (row) => row.status == 1 ? "Active" : "Inactive",
+      selector: (row) => row.status === 1 ? "Active" : "Inactive",
       cell: (row) => {
         return (
           <>
             {
-              row.status == 0 ? (<div className='Inactive'><span className='red-color'>Inactive</span></div>) : (<div className='active align-center'><span className=''>Deliverd</span></div>)
+              row.status === 0 ? (<div className='Inactive'><span className='red-color'>Inactive</span></div>) : (<div className='active align-center'><span className=''>Deliverd</span></div>)
             }
           </>
         )
@@ -411,9 +409,7 @@ export default function Dashboard() {
                               name="simple-controlled"
                               value={4}
                               emptyIcon={<StarIcon style={{ opacity: 1  }} fontSize="inherit" />}
-                              onChange={(event, newValue) => {
-                                setValue(newValue);
-                              }}
+                              
                             />
                           </div>
                           <div className=''>
@@ -443,9 +439,7 @@ export default function Dashboard() {
                               name="simple-controlled"
                               value={4}
                               emptyIcon={<StarIcon style={{ opacity: 1  }} fontSize="inherit" />}
-                              onChange={(event, newValue) => {
-                                setValue(newValue);
-                              }}
+                              
                             />
                           </div>
                           <div className=''>
@@ -475,9 +469,7 @@ export default function Dashboard() {
                               name="simple-controlled"
                               value={4}
                               emptyIcon={<StarIcon style={{ opacity: 1  }} fontSize="inherit" />}
-                              onChange={(event, newValue) => {
-                                setValue(newValue);
-                              }}
+                              
                             />
                           </div>
                           <div className=''>
@@ -507,9 +499,7 @@ export default function Dashboard() {
                               name="simple-controlled"
                               value={4}
                               emptyIcon={<StarIcon style={{ opacity: 1  }} fontSize="inherit" />}
-                              onChange={(event, newValue) => {
-                                setValue(newValue);
-                              }}
+                              
                             />
                           </div>
                           <div className=''>
@@ -539,9 +529,7 @@ export default function Dashboard() {
                               name="simple-controlled"
                               value={4}
                               emptyIcon={<StarIcon style={{ opacity: 1  }} fontSize="inherit" />}
-                              onChange={(event, newValue) => {
-                                setValue(newValue);
-                              }}
+                              
                             />
                           </div>
                           <div className=''>
@@ -571,9 +559,7 @@ export default function Dashboard() {
                               name="simple-controlled"
                               value={4}
                               emptyIcon={<StarIcon style={{ opacity: 1  }} fontSize="inherit" />}
-                              onChange={(event, newValue) => {
-                                setValue(newValue);
-                              }}
+                              
                             />
                           </div>
                           <div className=''>
@@ -604,9 +590,7 @@ export default function Dashboard() {
                               name="simple-controlled"
                               value={4}
                               emptyIcon={<StarIcon style={{ opacity: 1  }} fontSize="inherit" />}
-                              onChange={(event, newValue) => {
-                                setValue(newValue);
-                              }}
+                              
                             />
                           </div>
                           <div className=''>
@@ -638,7 +622,7 @@ export default function Dashboard() {
                               value={4}
                               emptyIcon={<StarIcon style={{ opacity: 1  }} fontSize="inherit" />}
                               onChange={(event, newValue) => {
-                                setValue(newValue);
+                                // setValue(newValue);
                               }}
                             />
                           </div>
@@ -671,7 +655,7 @@ export default function Dashboard() {
                               value={4}
                               emptyIcon={<StarIcon style={{ opacity: 1  }} fontSize="inherit" />}
                               onChange={(event, newValue) => {
-                                setValue(newValue);
+                                // setValue(newValue);
                               }}
                             />
                           </div>
@@ -704,7 +688,7 @@ export default function Dashboard() {
                               value={4}
                               emptyIcon={<StarIcon style={{ opacity: 1  }} fontSize="inherit" />}
                               onChange={(event, newValue) => {
-                                setValue(newValue);
+                                // setValue(newValue);
                               }}
                             />
                           </div>
@@ -737,7 +721,7 @@ export default function Dashboard() {
                               value={4}
                               emptyIcon={<StarIcon style={{ opacity: 1  }} fontSize="inherit" />}
                               onChange={(event, newValue) => {
-                                setValue(newValue);
+                                // setValue(newValue);
                               }}
                             />
                           </div>
@@ -770,7 +754,7 @@ export default function Dashboard() {
                               value={4}
                               emptyIcon={<StarIcon style={{ opacity: 1  }} fontSize="inherit" />}
                               onChange={(event, newValue) => {
-                                setValue(newValue);
+                                // setValue(newValue);
                               }}
                             />
                           </div>

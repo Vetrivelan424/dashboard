@@ -23,7 +23,7 @@ function ReactTable(props) {
     const [isPaginate, setIsPaginate] = useState(false);
     const [isCustomSort, setIsCustomSort] = useState(false);
     const [isSelectable, SetIsSelectable] = useState(false);
-    const [currentPageHigh, setCurrentPageHigh] = useState();
+    // const [currentPageHigh, setCurrentPageHigh] = useState();
     const [resetPaginate, setResetPaginate] = useState(false);
     const [resetSelector, setResetSelector] = useState('');
     const [tableId, setTableId] = useState('')
@@ -100,13 +100,6 @@ function ReactTable(props) {
 
 
 
-    function toPages(pages) {
-        const results = [];
-        for (let i = 1; i <= pages; i++) {
-            results.push(i);
-        }
-        return results;
-    }
 
 
 
@@ -138,19 +131,15 @@ function ReactTable(props) {
 
     const customReactPaging = React.useCallback(props => {
         var {
-            rowsPerPage,
             rowCount,
             onChangePage,
             onChangeRowsPerPage, // available but not used here
             currentPage,
-            paginationTotalRows,
 
         } = props;
         const pages = parseInt(getNumberOfPages(rowCount, csRowsPerPage));
-        const pageItems = toPages(pages);
-        const updatedPage = getNumberOfPages(rowCount, csRowsPerPage);
-        const nextDisabled = currentPage === pageItems.length;
-
+        // const pageItems = toPages(pages);
+    
         const triggerFirst = () => {
             if (tableId != null && tableId != '') {
                 let pagination = document.querySelector(`#${tableId} .topic-element-paginate`).childNodes;
@@ -184,7 +173,7 @@ function ReactTable(props) {
         const handlePageClick = (event) => {
             onChangeRowsPerPage(csRowsPerPage)
             onChangePage((currentPage = event.selected) + 1);
-            setCurrentPageHigh((currentPage = event.selected) + 1)
+            // setCurrentPageHigh((currentPage = event.selected) + 1)
         };
 
 
@@ -192,11 +181,11 @@ function ReactTable(props) {
             if (needRowPerPage == true || needRowPerPage == undefined || needRowPerPage == null) {
                 onChangeRowsPerPage(document.getElementById('super-admin-row-drop').value)
                 onChangePage(1);
-                setCurrentPageHigh(1)
+                // setCurrentPageHigh(1)
             } else {
                 onChangeRowsPerPage(csRowsPerPage)
                 onChangePage(1);
-                setCurrentPageHigh(1)
+                // setCurrentPageHigh(1)
             }
         };
 
